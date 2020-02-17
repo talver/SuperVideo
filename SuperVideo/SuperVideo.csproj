@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6356F1A0-78EC-4CB5-BCEE-8BF997AE01F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperVideo</RootNamespace>
+    <AssemblyName>SuperVideo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>locker.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ruihit.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ruihit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Ruihit.Ffmpeg, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ruihit.Ffmpeg.dll</HintPath>
+    </Reference>
+    <Reference Include="Ruihit.Settings.Core">
+      <HintPath>..\..\测试工程\Ruihit.Settings.Core\bin\Debug\Ruihit.Settings.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=2.1.154.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.1.154\lib\net45\AnyCPU\Vlc.DotNet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.1.154.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.1.154\lib\net45\AnyCPU\Vlc.DotNet.Core.Interops.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.1.154.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.1.154\lib\net45\AnyCPU\Vlc.DotNet.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="common\ApplicationConfig.cs" />
+    <Compile Include="common\HttpServer.cs" />
+    <Compile Include="common\Logger.cs" />
+    <Compile Include="common\LogManager.cs" />
+    <Compile Include="common\PasswordManegment.cs" />
+    <Compile Include="controls\FlowLayoutPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\PictureBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="entity\SystemLog.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="LogEventArgs.cs" />
+    <Compile Include="tools\FileUtility.cs" />
+    <Compile Include="tools\FontUtility.cs" />
+    <Compile Include="tools\SecurityUtils.cs" />
+    <Compile Include="view\frmConvert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmConvert.Designer.cs">
+      <DependentUpon>frmConvert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmEncrypt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmEncrypt.Designer.cs">
+      <DependentUpon>frmEncrypt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmLogs.Designer.cs">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\frmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmPassword.Designer.cs">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmVideoPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmVideoPlayer.Designer.cs">
+      <DependentUpon>frmVideoPlayer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="controls\FlowLayoutPanelEx.resx">
+      <DependentUpon>FlowLayoutPanelEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\PictureBoxEx.resx">
+      <DependentUpon>PictureBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmConvert.resx">
+      <DependentUpon>frmConvert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmEncrypt.resx">
+      <DependentUpon>frmEncrypt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmLogs.resx">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="view\frmPassword.resx">
+      <DependentUpon>frmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmVideoPlayer.resx">
+      <DependentUpon>frmVideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16_import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_delete %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\access_%28delete%29_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_loggoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings2_16x16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_primary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safevideo.ico" />
+    <None Include="Resources\seprator.png" />
+    <Content Include="locker.ico" />
+    <None Include="Resources\titlebar_right.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\log.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\add_video.png" />
+    <None Include="Resources\reverse.png" />
+    <None Include="Resources\search.png" />
+    <Content Include="safevideo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
